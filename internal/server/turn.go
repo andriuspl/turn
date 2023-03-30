@@ -175,10 +175,10 @@ func handleAllocateRequest(r Request, m *stun.Message) error {
 func handleRefreshRequest(r Request, m *stun.Message) error {
 	r.Log.Debugf("received RefreshRequest from %s", r.SrcAddr.String())
 
-	messageIntegrity, hasAuth, err := authenticateRequest(r, m, stun.MethodRefresh)
-	if !hasAuth {
-		return err
-	}
+// 	messageIntegrity, hasAuth, err := authenticateRequest(r, m, stun.MethodRefresh)
+// 	if !hasAuth {
+// 		return err
+// 	}
 
 	lifetimeDuration := allocationLifeTime(m)
 	fiveTuple := &allocation.FiveTuple{
